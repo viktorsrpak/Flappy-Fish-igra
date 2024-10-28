@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://wxvex1r3otdr"]
+
+[ext_resource type="Texture2D" uid="uid://b6nvpq6umg8nl" path="res://assets/fish.png" id="1_ge0e0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0hfn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ge0e0")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2fci"]
+radius = 23.0
+height = 80.0
+
+[node name="Fish" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o0hfn")
+animation = &"flying"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_u2fci")
